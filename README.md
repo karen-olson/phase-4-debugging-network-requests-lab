@@ -64,10 +64,16 @@ developing your own process.
 
   - How I debugged:
 
+  Looked at rails server logs --> name error at toys_controller#create --> changed Toys to Toy.
+
 - Update the number of likes for a toy
 
   - How I debugged:
 
+  Saw "204 no content error" in server logs, and "Unexpected end of JSON input" in browser console. This means JSON isn't being returned. Server logs said it's happening at toys_controller#update line 16. Added render json:
+
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+
+  404 error in console. In server logs, "No route matches [DELETE] '/toys/1'. Added :destroy to routes.rb.
